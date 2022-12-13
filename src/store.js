@@ -7,6 +7,8 @@ export const store = reactive({
     movies:[],
     series:[],
     posters:[],
+
+    activeFilters: {},
     
 })
 
@@ -48,4 +50,8 @@ export function fetchPosters (){
       // this.ajaxError= "A causa di un errore l'operazione non è andata a buon fine!!";
         
     });
+}
+
+export function searchBtnClik (){
+    
 }

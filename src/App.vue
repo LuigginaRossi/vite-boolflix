@@ -2,15 +2,29 @@
 import Main from './components/Main.vue';
 import SearchBar from './components/SearchBar.vue';
 
+import {store, fetchPosters} from './store';
+
   export default{
-    components: { Main, SearchBar }
-}
+    components: { Main, SearchBar },
+    data() {
+      return {
+        store,
+      }
+    },
+    methods:{
+      onSearch(filters){
+        this.store.activeFilters = filters;
+        fetchPosters();
+        console.log(filters);
+      }
+    }
+  }
 </script>
 
 <template>
   <div class="container py-5">
     <h1>Boolflix</h1>
-    <SearchBar></SearchBar>
+    <SearchBar @search="onSearch"></SearchBar>
     <Main></Main>
   </div>
   

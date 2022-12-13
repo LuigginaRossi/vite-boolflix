@@ -6,11 +6,31 @@ export default {
         return {
             store,
             baseUrl: "https://image.tmdb.org/t/p/",
-            sizeUrl: "w92",
+            sizeUrl: "w342",
         }
     },
     props:{
-        poster:{
+        posterMovie:{
+            /**
+             * @property {Boolean} adult
+             * @property {string}  backdrop_path
+             * @property {array}   genre_ids
+             * @property {number}  id
+             * @property {string}  original_language
+             * @property {string}  original_title
+             * @property {string}  overview
+             * @property {number}  popularity
+             * @property {string}  poster_path
+             * @property {string}  release_date
+             * @property {string}  title
+             * @property {Boolean} video
+             * @property {number}  vote_average
+             * @property {number}  vote_count
+             */
+            type: Object,
+            required: true,
+        },
+        posterSerie:{
             /**
              * @property {string} backdrop_path
              * @property {string} first_air_date
