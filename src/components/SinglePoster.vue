@@ -83,13 +83,11 @@ export default {
             <p class="card-text">
                 <small>Language: {{poster.original_language}}</small>
                 <img :src="flagUrl" alt=""><br>
-                <!-- <img src="../assets/da.png" alt=""> -->
+
                 <small>Vote: {{poster.vote_average}}</small>
-                <!-- <i v-for="star in starsVote" 
-                :class="{'fa-solid': true, 'fa-regular' : false}" class="fa-star"></i> -->
-                <!-- <i class="fa-regular fa-star"></i> -->
+
                 <i v-for="star in starsVote"
-                :class="star == true ? 'fa-solid' : 'fa-regular'" class="fa-star"></i>
+                :class="star == true ? 'fa-solid' : 'fa-regular'" class="fa-star text-warning"></i>
             </p>
         </div>
     </div>
