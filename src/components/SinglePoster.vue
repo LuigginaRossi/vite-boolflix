@@ -22,6 +22,7 @@ export default {
              */
             type: Object,
             required: true,
+    
         },
     },
     data() {
@@ -29,11 +30,35 @@ export default {
             store,
             baseUrl: "https://image.tmdb.org/t/p/",
             sizeUrl: "w342",
+            flagBaseUrl: "src/assets/",
         }
     },
     computed:{
         getImage(){         
                 return `${this.baseUrl}${this.sizeUrl}${this.poster.poster_path}`
+        },
+        flagUrl(){
+            if(this.poster.original_language == "en"){
+                return `${this.flagBaseUrl}`+`en.png`
+
+            } else if (this.poster.original_language == "da"){
+                return this.flagBaseUrl +"da.png"
+
+            } else if (this.poster.original_language == "es"){
+                return this.flagBaseUrl +"es.png"
+
+            } else if (this.poster.original_language == "ja"){
+                return this.flagBaseUrl +"ja.png"
+
+            } else if (this.poster.original_language == "us"){
+                return this.flagBaseUrl + "us.png"
+
+            } else if (this.poster.original_language == "it"){
+                return this.flagBaseUrl +"it.png"
+
+            } else if (this.poster.original_language == "de"){
+                return this.flagBaseUrl +"de.png"
+            }
         }
     }
 }
@@ -50,7 +75,9 @@ export default {
             <h6>Title: {{poster.title ?? poster.name}}</h6>
             <p class="card-text">{{poster.overview}}</p>
             <p class="card-text">
-                <small>Language: {{poster.original_language}}</small><br>
+                <small>Language: {{poster.original_language}}</small>
+                <img :src="flagUrl" alt=""><br>
+                <!-- <img src="../assets/da.png" alt=""> -->
                 <small>Vote: {{poster.vote_average}}</small>
             </p>
         </div>
