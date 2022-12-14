@@ -52,15 +52,25 @@ export default {
             const toReturn= [];
             const halfVote= this.poster.vote_average / 2;
             const vote = Math.floor(halfVote);
+            //calcolo con x5 
+            const decimali = halfVote % 1 *10;
+            //se c'è una mezza stella
+            let halfStar = false;
+         
             
             for (let i = 0; i < 5; i++) {
 
-                if(i < vote){
-                    //vuota   
-                    toReturn.push(true);
+                if(i < vote){   
+                    //true
+                    toReturn.push(1);
                 }else{
-                    //piena
-                    toReturn.push(false);
+                   //false
+                   if((decimali >= 5) && (halfStar == false)){
+                     toReturn.push(3);
+                     halfStar= true;
+                   }else{
+                       toReturn.push(2);
+                   }
                 }
             }
 
@@ -86,8 +96,10 @@ export default {
 
                 <small>Vote: {{poster.vote_average}}</small>
 
-                <i v-for="star in starsVote"
-                :class="star == true ? 'fa-solid' : 'fa-regular'" class="fa-star text-warning"></i>
+                <!-- <i v-for="star in starsVote"
+                :class="star == true ? 'fa-solid' : 'fa-regular'" class="fa-star text-warning"></i> -->
+                <i v-for="star in starsVote" class="text-warning"
+                :class="{'fa-solid fa-star': star == 1 , 'fa-regular fa-star': star == 2, 'fa-solid fa-star-half-stroke': star ==3}"></i>
             </p>
         </div>
     </div>
