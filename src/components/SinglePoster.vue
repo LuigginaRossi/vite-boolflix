@@ -102,4 +102,9 @@ export default {
         height: 100%;
         object-fit: cover;
     }
+
+    .card-text img{
+        width: 30px;
+        padding-left: .3rem;
+    }
 </style>
