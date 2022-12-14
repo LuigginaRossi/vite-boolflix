@@ -38,27 +38,29 @@ export default {
                 return `${this.baseUrl}${this.sizeUrl}${this.poster.poster_path}`
         },
         flagUrl(){
-            if(this.poster.original_language == "en"){
-                return `${this.flagBaseUrl}`+`en.png`
+            const languages= ["en", "da", "es", "ja", "us", "it", "de"]
 
-            } else if (this.poster.original_language == "da"){
-                return this.flagBaseUrl +"da.png"
+            if(languages.includes(this.poster.original_language)){
+                return `${this.flagBaseUrl}${this.poster.original_language}.png`
 
-            } else if (this.poster.original_language == "es"){
-                return this.flagBaseUrl +"es.png"
+            // } else if (this.poster.original_language == "da"){
+            //     return this.flagBaseUrl +"da.png"
 
-            } else if (this.poster.original_language == "ja"){
-                return this.flagBaseUrl +"ja.png"
+            // } else if (this.poster.original_language == "es"){
+            //     return this.flagBaseUrl +"es.png"
 
-            } else if (this.poster.original_language == "us"){
-                return this.flagBaseUrl + "us.png"
+            // } else if (this.poster.original_language == "ja"){
+            //     return this.flagBaseUrl +"ja.png"
 
-            } else if (this.poster.original_language == "it"){
-                return this.flagBaseUrl +"it.png"
+            // } else if (this.poster.original_language == "us"){
+            //     return this.flagBaseUrl + "us.png"
 
-            } else if (this.poster.original_language == "de"){
-                return this.flagBaseUrl +"de.png"
-            }
+            // } else if (this.poster.original_language == "it"){
+            //     return this.flagBaseUrl +"it.png"
+
+            // } else if (this.poster.original_language == "de"){
+            //     return this.flagBaseUrl +"de.png"
+             }
         },
         starsVote(){
             //devo dividere il mio voto in 2 
@@ -73,10 +75,10 @@ export default {
 
                 if(i < vote){
                     //vuota   
-                    toReturn.push(false)
+                    toReturn.push(true);
                 }else{
                     //piena
-                    toReturn.push(true)
+                    toReturn.push(false);
                 }
             }
 
@@ -101,9 +103,11 @@ export default {
                 <img :src="flagUrl" alt=""><br>
                 <!-- <img src="../assets/da.png" alt=""> -->
                 <small>Vote: {{poster.vote_average}}</small>
-                <i v-for="star in starsVote" 
-                :class="{'fa-solid': true, 'fa-regular' : false}" class="fa-star"></i>
+                <!-- <i v-for="star in starsVote" 
+                :class="{'fa-solid': true, 'fa-regular' : false}" class="fa-star"></i> -->
                 <!-- <i class="fa-regular fa-star"></i> -->
+                <i v-for="star in starsVote"
+                :class="star == true ? 'fa-solid' : 'fa-regular'" class="fa-star"></i>
             </p>
         </div>
     </div>
