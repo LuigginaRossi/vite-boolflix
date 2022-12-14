@@ -42,24 +42,6 @@ export default {
 
             if(languages.includes(this.poster.original_language)){
                 return `${this.flagBaseUrl}${this.poster.original_language}.png`
-
-            // } else if (this.poster.original_language == "da"){
-            //     return this.flagBaseUrl +"da.png"
-
-            // } else if (this.poster.original_language == "es"){
-            //     return this.flagBaseUrl +"es.png"
-
-            // } else if (this.poster.original_language == "ja"){
-            //     return this.flagBaseUrl +"ja.png"
-
-            // } else if (this.poster.original_language == "us"){
-            //     return this.flagBaseUrl + "us.png"
-
-            // } else if (this.poster.original_language == "it"){
-            //     return this.flagBaseUrl +"it.png"
-
-            // } else if (this.poster.original_language == "de"){
-            //     return this.flagBaseUrl +"de.png"
              }
         },
         starsVote(){
