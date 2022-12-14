@@ -101,7 +101,8 @@ export default {
                 <img :src="flagUrl" alt=""><br>
                 <!-- <img src="../assets/da.png" alt=""> -->
                 <small>Vote: {{poster.vote_average}}</small>
-                <i :class="{'fa-solid': true, 'fa-regular' : false}" class="fa-star"></i>
+                <i v-for="star in starsVote" 
+                :class="{'fa-solid': true, 'fa-regular' : false}" class="fa-star"></i>
                 <!-- <i class="fa-regular fa-star"></i> -->
             </p>
         </div>
