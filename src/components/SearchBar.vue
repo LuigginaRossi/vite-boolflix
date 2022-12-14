@@ -12,7 +12,7 @@ export default {
     emits:["search"],
     methods: {
         onSearchClick(){
-            this.$emit("search", {...this.filters});
+            this.$emit("search", {...this.filters});  
         }
     },
 }

@@ -2,13 +2,6 @@
 import{store} from '../store'
 export default {
     name: "SinglePoster",
-    data() {
-        return {
-            store,
-            baseUrl: "https://image.tmdb.org/t/p/",
-            sizeUrl: "w342",
-        }
-    },
     props:{
         poster:{
             /**
@@ -30,32 +23,15 @@ export default {
             type: Object,
             required: true,
         },
-        // posterSerie:{
-        //     /**
-        //      * @property {string} backdrop_path
-        //      * @property {string} first_air_date
-        //      * @property {array}  genre_ids
-        //      * @property {number} id
-        //      * @property {string} name
-        //      * @property {array}  origin_contry
-        //      * @property {string} original_language
-        //      * @property {string} original_name
-        //      * @property {string} overview
-        //      * @property {number} popularity
-        //      * @property {string} poster_path
-        //      * @property {number} vote_average
-        //      * @property {number} vote_count
-        //      */
-        //     type: Object,
-        //     required: true,
-        // }
+    },
+    data() {
+        return {
+            store,
+            baseUrl: "https://image.tmdb.org/t/p/",
+            sizeUrl: "w342",
+        }
     },
     computed:{
-        data() {
-            return {
-            
-            }
-        },
         getImage(){         
                 return `${this.baseUrl}${this.sizeUrl}${this.poster.poster_path}`
         }
@@ -86,6 +62,7 @@ export default {
     }
     .card-img-overlay{
         opacity: 0;
+        transition: all .3 ease-in-out .3;
     }
     .card-img-overlay:hover{
         opacity: 1;

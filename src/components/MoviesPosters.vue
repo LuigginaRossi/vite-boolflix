@@ -9,10 +9,9 @@ export default {
             store,
         }
     },
-    created(){
-        fetchPosters();
-           
-    },
+    // created(){
+    //     fetchPosters();    
+    // },
 }
 </script>
     

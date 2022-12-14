@@ -13,8 +13,8 @@ import {store, fetchPosters} from './store';
     },
     methods:{
       onSearch(filters){
-        fetchPosters();
         this.store.activeFilters = filters;
+        fetchPosters();
         console.log(filters);
       }
     }
@@ -32,7 +32,4 @@ import {store, fetchPosters} from './store';
 
 <style lang="scss">
   @use "./styles/general.scss" as *;
-
-
-
 </style>
