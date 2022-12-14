@@ -59,6 +59,28 @@ export default {
             } else if (this.poster.original_language == "de"){
                 return this.flagBaseUrl +"de.png"
             }
+        },
+        starsVote(){
+            //devo dividere il mio voto in 2 
+            //arrotondo per difetto e stampo una stella per ogni voto
+            //ciclo fino a 5 per stampare le 5 stelle:
+            //qui pusho le mie stelline
+            const toReturn= [];
+            const halfVote= this.poster.vote_average / 2;
+            const vote = Math.floor(halfVote);
+            
+            for (let i = 0; i < 5; i++) {
+
+                if(i < vote){
+                    //vuota   
+                    toReturn.push(false)
+                }else{
+                    //piena
+                    toReturn.push(true)
+                }
+            }
+
+            return toReturn
         }
     }
 }
@@ -79,6 +101,8 @@ export default {
                 <img :src="flagUrl" alt=""><br>
                 <!-- <img src="../assets/da.png" alt=""> -->
                 <small>Vote: {{poster.vote_average}}</small>
+                <i :class="{'fa-solid': true, 'fa-regular' : false}" class="fa-star"></i>
+                <!-- <i class="fa-regular fa-star"></i> -->
             </p>
         </div>
     </div>
