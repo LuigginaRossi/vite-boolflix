@@ -10,7 +10,7 @@ export default {
         }
     },
     props:{
-        posterMovie:{
+        poster:{
             /**
              * @property {Boolean} adult
              * @property {string}  backdrop_path
@@ -30,25 +30,25 @@ export default {
             type: Object,
             required: true,
         },
-        posterSerie:{
-            /**
-             * @property {string} backdrop_path
-             * @property {string} first_air_date
-             * @property {array}  genre_ids
-             * @property {number} id
-             * @property {string} name
-             * @property {array}  origin_contry
-             * @property {string} original_language
-             * @property {string} original_name
-             * @property {string} overview
-             * @property {number} popularity
-             * @property {string} poster_path
-             * @property {number} vote_average
-             * @property {number} vote_count
-             */
-            type: Object,
-            required: true,
-        }
+        // posterSerie:{
+        //     /**
+        //      * @property {string} backdrop_path
+        //      * @property {string} first_air_date
+        //      * @property {array}  genre_ids
+        //      * @property {number} id
+        //      * @property {string} name
+        //      * @property {array}  origin_contry
+        //      * @property {string} original_language
+        //      * @property {string} original_name
+        //      * @property {string} overview
+        //      * @property {number} popularity
+        //      * @property {string} poster_path
+        //      * @property {number} vote_average
+        //      * @property {number} vote_count
+        //      */
+        //     type: Object,
+        //     required: true,
+        // }
     },
     computed:{
         data() {
@@ -56,8 +56,8 @@ export default {
             
             }
         },
-        getImage(){
-            return `${this.baseUrl}${this.sizeUrl}${this.poster.poster_path}`
+        getImage(){         
+                return `${this.baseUrl}${this.sizeUrl}${this.poster.poster_path}`
         }
     }
 }
@@ -65,12 +65,37 @@ export default {
 
 <template>
     <div class="card text-bg-dark">
-        <img :src="getImage" class="card-img" alt="...">
+        <img v-if="poster.poster_path == null" src="../assets/default.jpg" alt="">
+        <img v-else :src="getImage" class="card-img" alt="...">
         <div class="card-img-overlay">
-            <h5 class="card-title"></h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                This content is a little bit longer.</p>
-            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+            <h5 class="card-title">
+                Original Tilte: {{poster.original_title ?? poster.original_name}}
+            </h5>
+            <h6>Title: {{poster.title ?? poster.name}}</h6>
+            <p class="card-text">{{poster.overview}}</p>
+            <p class="card-text">
+                <small>Language: {{poster.original_language}}</small><br>
+                <small>Vote: {{poster.vote_average}}</small>
+            </p>
         </div>
     </div>
 </template>
+<style scoped>
+    .card{
+        height:100%
+    }
+    .card-img-overlay{
+        opacity: 0;
+    }
+    .card-img-overlay:hover{
+        opacity: 1;
+        background: rgba(255, 255, 255, .7);
+        color: black;
+        overflow: auto;
+    }
+
+    .card img{
+        height: 100%;
+        object-fit: cover;
+    }
+</style>

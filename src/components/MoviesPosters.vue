@@ -24,7 +24,7 @@ export default {
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
         <div class="col" v-for="singlePoster in store.movies">
-            <SinglePoster :posterMovie="singlePoster"></SinglePoster>
+            <SinglePoster :poster="singlePoster"></SinglePoster>
         </div>
     </div>
     
@@ -32,7 +32,7 @@ export default {
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6  g-4">
         <div class="col" v-for="singlePoster in store.series">
-            <SinglePoster :posterSerie="singlePoster"></SinglePoster>
+            <SinglePoster :poster="singlePoster"></SinglePoster>
         </div>
     </div>
 

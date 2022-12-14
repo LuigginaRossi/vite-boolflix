@@ -13,8 +13,8 @@ import {store, fetchPosters} from './store';
     },
     methods:{
       onSearch(filters){
-        this.store.activeFilters = filters;
         fetchPosters();
+        this.store.activeFilters = filters;
         console.log(filters);
       }
     }
