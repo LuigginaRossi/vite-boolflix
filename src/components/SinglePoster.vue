@@ -88,13 +88,13 @@ export default {
             <h5 class="card-title">
                 Original Tilte: {{poster.original_title ?? poster.original_name}}
             </h5>
-            <h6 v-if="{}">Title: {{poster.title ?? poster.name}}</h6>
+            <h6 v-if="!poster.original_title && !poster.original_name">Title: {{poster.title ?? poster.name}}</h6>
             <p class="card-text">{{poster.overview}}</p>
             <p class="card-text">
                 <small>Language: {{poster.original_language}}</small>
                 <img :src="flagUrl" alt=""><br>
 
-                <small>Vote: {{poster.vote_average}}</small>
+                <small class="pb-3">Vote: {{poster.vote_average}}</small><br>
 
                 <!-- <i v-for="star in starsVote"
                 :class="star == true ? 'fa-solid' : 'fa-regular'" class="fa-star text-warning"></i> -->
@@ -108,6 +108,12 @@ export default {
     .card{
         height:100%;
         overflow: hidden;
+        box-shadow: 0 0 5px 5px rgba(255, 0, 0, 0.217);
+        border: 0;
+    }
+    .card:hover{
+        box-shadow: none;
+        
     }
   
     .card-img-overlay{
@@ -119,6 +125,7 @@ export default {
         background: rgba(255, 255, 255, .7);
         color: black;
         overflow: auto;
+        box-shadow: 0 0 5px 5px red;
     }
 
     .card img{
