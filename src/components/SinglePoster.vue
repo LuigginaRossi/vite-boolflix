@@ -88,7 +88,7 @@ export default {
             <h5 class="card-title">
                 Original Tilte: {{poster.original_title ?? poster.original_name}}
             </h5>
-            <h6>Title: {{poster.title ?? poster.name}}</h6>
+            <h6 v-if="{}">Title: {{poster.title ?? poster.name}}</h6>
             <p class="card-text">{{poster.overview}}</p>
             <p class="card-text">
                 <small>Language: {{poster.original_language}}</small>

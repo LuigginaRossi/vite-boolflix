@@ -22,7 +22,7 @@ import {store, fetchPosters} from './store';
 </script>
 
 <template>
-  <div class="container py-5">
+  <div class="container py-4">
     <SearchBar @search="onSearch"></SearchBar>
     <template :class="store.activeFilters.titlePoster ? 'd-block': 'd-none'">
         <Main></Main>
