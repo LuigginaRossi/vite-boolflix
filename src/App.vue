@@ -17,10 +17,6 @@ import {store, fetchPosters} from './store';
         fetchPosters();
         console.log(filters);
       },
-      adultControl(){
-            
-            fetchPosters()
-        }
     }
   }
 </script>

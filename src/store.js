@@ -9,7 +9,7 @@ export const store = reactive({
     posters:[],
 
     activeFilters: {},
-    includeAdult: false,
+    includeAdult: Boolean,
     
 })
 

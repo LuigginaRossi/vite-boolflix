@@ -1,0 +1,7 @@
+import { createApp } from '/node_modules/.vite/deps/vue.js?v=1360346b'
+import App from '/src/App.vue?t=1671131198734'
+
+import '/node_modules/.vite/deps/bootstrap.js?v=1360346b'
+import '/node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+createApp(App).mount('#app')

@@ -15,16 +15,15 @@ export default {
             this.$emit("search", {...this.filters});  
         },
         adultControlChange(){
+            this.store.includeAdult = false;
             if(this.store.includeAdult === false){
                 alert("Alcuni contenuti sono adatti solo ai maggiorenni. confermi di avere più di 18 anni?");
-                this.store.includeAdult = true;
+                return this.store.includeAdult = true;
             }else{
-                this.store.includeAdult = false;
+                return this.store.includeAdult = false;
             }
-            fetchPosters();
-        }
-       
-        
+            fetchPosters()
+        },      
     },
 }
 </script>

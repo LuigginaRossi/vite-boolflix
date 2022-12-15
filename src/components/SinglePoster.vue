@@ -75,7 +75,7 @@ export default {
             }
 
             return toReturn
-        }
+        },
     }
 }
 </script>
@@ -103,6 +103,7 @@ export default {
             </p>
         </div>
     </div>
+
 </template>
 <style scoped>
     .card{
