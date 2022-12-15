@@ -9,6 +9,7 @@ export const store = reactive({
     posters:[],
 
     activeFilters: {},
+    includeAdult: false,
     
 })
 
@@ -31,6 +32,7 @@ export function fetchPosters (){
         params:{
             api_key: "985105856f74a10690c0481645c8edf7",
             query: store.activeFilters.titlePoster,
+            include_adult: store.includeAdult,
         }
     })
     .then(resp=>{

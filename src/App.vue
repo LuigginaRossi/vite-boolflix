@@ -16,7 +16,11 @@ import {store, fetchPosters} from './store';
         this.store.activeFilters = filters;
         fetchPosters();
         console.log(filters);
-      }
+      },
+      adultControl(){
+            
+            fetchPosters()
+        }
     }
   }
 </script>
