@@ -109,6 +109,7 @@ export default {
         height:100%;
         overflow: hidden;
     }
+  
     .card-img-overlay{
         opacity: 0;
         transition: all .3 ease-in-out .3;
@@ -128,6 +129,14 @@ export default {
     .card-text img{
         width: 30px;
         padding-left: .3rem;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background: linear-gradient( red, black);
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+        background: linear-gradient(black, red);   
     }
 
 </style>

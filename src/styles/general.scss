@@ -10,14 +10,15 @@ body {
   }
 
 
-  ::-webkit-scrollbar{
-    width: .5em;
-    height: .5em;
+    ::-webkit-scrollbar{
+        width: .4em;
+        height: .5em;
     }
 
     ::-webkit-scrollbar-track{
         background: rgb(122, 15, 15);
         border-radius: 100vw;
+        margin-block: .5em;
     }
 
     ::-webkit-scrollbar-thumb{
@@ -28,6 +29,5 @@ body {
     }
 
     ::-webkit-scrollbar-thumb:hover{
-        background: linear-gradient(90deg, black, red);
-        
+        background: linear-gradient(90deg, black, red);   
     }

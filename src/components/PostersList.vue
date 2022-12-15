@@ -41,8 +41,11 @@ export default {
     .row{
         overflow: auto;
         flex-wrap: nowrap;
+
     }
-
-   
-
+    .col:hover{
+        z-index: 4;
+        transform:  scale(1.15);
+    }
+  
 </style>
