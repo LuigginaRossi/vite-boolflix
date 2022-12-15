@@ -1,11 +1,11 @@
 <script>
-import MoviesPosters from './MoviesPosters.vue';
+import PostersList from './PostersList.vue';
 
 export default {
-    components: { MoviesPosters }
+    components: { PostersList }
 }
 </script>
 
 <template>
-    <MoviesPosters></MoviesPosters>
+    <PostersList></PostersList>
 </template>

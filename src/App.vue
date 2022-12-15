@@ -33,4 +33,7 @@ import {store, fetchPosters} from './store';
 
 <style lang="scss">
   @use "./styles/general.scss" as *;
+  .container{
+    height: 100vh;
+  }
 </style>

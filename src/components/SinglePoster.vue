@@ -106,7 +106,8 @@ export default {
 </template>
 <style scoped>
     .card{
-        height:100%
+        height:100%;
+        overflow: hidden;
     }
     .card-img-overlay{
         opacity: 0;
