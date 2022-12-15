@@ -43,26 +43,6 @@ export default {
         flex-wrap: nowrap;
     }
 
-    ::-webkit-scrollbar{
-        width: 1em;
-        height: 1em;
-    }
-
-    ::-webkit-scrollbar-track{
-        background: rgb(122, 15, 15);
-        border-radius: 100vw;
-    }
-
-    ::-webkit-scrollbar-thumb{
-        background: linear-gradient(90deg, red, black);
-        border-radius: 100vw;
-        border: .25em solid rgb(122, 15, 15);
-        transition: .3 linear .3;
-    }
-
-    ::-webkit-scrollbar-thumb:hover{
-        background: linear-gradient(90deg, black, red);
-        
-    }
+   
 
 </style>

@@ -8,3 +8,26 @@
 body {
     background-color:  black!important;
   }
+
+
+  ::-webkit-scrollbar{
+    width: .5em;
+    height: .5em;
+    }
+
+    ::-webkit-scrollbar-track{
+        background: rgb(122, 15, 15);
+        border-radius: 100vw;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background: linear-gradient(90deg, red, black);
+        border-radius: 100vw;
+        border: .025em solid rgb(122, 15, 15);
+        transition: .3 linear .3;
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+        background: linear-gradient(90deg, black, red);
+        
+    }

@@ -129,4 +129,5 @@ export default {
         width: 30px;
         padding-left: .3rem;
     }
+
 </style>
