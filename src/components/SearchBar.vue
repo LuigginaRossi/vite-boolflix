@@ -20,7 +20,7 @@ export default {
 
 <template>
     <div class="d-flex justify-content-between align-content-center">
-        <h1 class="text-secondary ">Boolflix</h1>
+        <h1 class="text-secondary">Boolflix</h1>
         <form @submit.prevent="onSearchClick" class="align-self-center">
             <div class="input-group">
                 <input type="text" class="form-control bg-dark text-secondary" placeholder="Search Title" aria-label="Example text with button addon"
