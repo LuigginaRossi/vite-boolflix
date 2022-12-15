@@ -23,9 +23,10 @@ import {store, fetchPosters} from './store';
 
 <template>
   <div class="container py-5">
-    <h1>Boolflix</h1>
     <SearchBar @search="onSearch"></SearchBar>
-    <Main></Main>
+    <template :class="store.activeFilters.titlePoster ? 'd-block': 'd-none'">
+        <Main></Main>
+    </template>
   </div>
   
 </template>

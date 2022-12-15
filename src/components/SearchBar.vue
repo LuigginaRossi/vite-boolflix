@@ -19,6 +19,7 @@ export default {
 </script>
 
 <template>
+    <h1>Boolflix</h1>
     <form @submit.prevent="onSearchClick">
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Search Title" aria-label="Example text with button addon"
