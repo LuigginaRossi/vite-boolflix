@@ -110,7 +110,8 @@ export default {
     .movie-container,.serie-container{
         height: 40vh;
         align-items: center;
-        justify-content: center;      
+        justify-content: center;     
+        overflow: auto; 
     }
 
     .row{

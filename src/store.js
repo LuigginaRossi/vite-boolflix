@@ -24,7 +24,7 @@ export function fetchPosters (){
     .then(resp=>{
 
         store.movies = resp.data.results;
-        console.log(resp.data.results)
+        console.log(resp.data.results);
 
     })
 
@@ -51,6 +51,3 @@ export function fetchPosters (){
     });
 }
 
-export function searchBtnClik (){
-    
-}

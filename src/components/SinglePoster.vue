@@ -103,7 +103,6 @@ export default {
             </p>
         </div>
     </div>
-
 </template>
 
 <style scoped>
