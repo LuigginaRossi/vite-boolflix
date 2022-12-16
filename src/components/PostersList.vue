@@ -98,12 +98,13 @@ export default {
         border-bottom: 3.5px solid rgba(255, 0, 0, 0); 
         border-top: 3.5px solid rgba(255, 0, 0, 0); 
 
-        // padding: 0;
         border-radius: 10px;
-        &hover{
+
+        &:hover{
         z-index: 4;
         transform:  scale(1.1);
-        border: 0;
+        border-top: 0;
+        border-bottom: 0;
         }
     }
     .btn{
@@ -116,12 +117,7 @@ export default {
     }
     .active{
         border-bottom: 3.5px solid red; 
-        border-top: 3.5px solid red; 
-
-        /* margin: -3.5px; */
-        /* padding: 0; */
-        /* border-radius: 10px; */
-        // background-color: red;
+        border-top: 3.5px solid rgb(255, 0, 0); 
     }
   
 </style>
