@@ -66,26 +66,45 @@ export default {
         <div @click="btnNext" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-right"></i></div>
     </div>
     
-    
-    <h4 class=" py-3">Series</h4>
+    <div class="serie-tv d-flex gap-3" @mouseover="stopAutoplay" @mouseleave="secondAutoplay">
+        <div @click="btnPrev" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-left"></i></div>
+        
+        <div class="serie-container">
+            <h4 class=" py-3">Series</h4>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6  g-4 pb-4 ">
-        <div class="col" v-for="singlePoster in store.series">
-            <SinglePoster :poster="singlePoster"></SinglePoster>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6  g-4 pb-4 ">
+                <div class="col" v-for="singlePoster, i in store.series"
+                :class="{'active' : i === this.currentIndex}"
+                @click="posterClick(i)">
+                    <SinglePoster :poster="singlePoster"></SinglePoster>
+                </div>
+            </div>
+
         </div>
+            
+        <div @click="btnNext" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-right"></i></div>
+
     </div>
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
     .row{
         overflow: auto;
         flex-wrap: nowrap;
-
     }
-    .col:hover{
+
+    .col{
+        border-bottom: 3.5px solid rgba(255, 0, 0, 0); 
+        border-top: 3.5px solid rgba(255, 0, 0, 0); 
+
+        // padding: 0;
+        border-radius: 10px;
+        &hover{
         z-index: 4;
-        transform:  scale(1.13);
+        transform:  scale(1.1);
+        border: 0;
+        }
     }
     .btn{
         width: 10px;
@@ -96,9 +115,13 @@ export default {
         justify-content: center;
     }
     .active{
-        border: 3.5px solid red;
-        padding: 0;
-        border-radius: 10px;
+        border-bottom: 3.5px solid red; 
+        border-top: 3.5px solid red; 
+
+        /* margin: -3.5px; */
+        /* padding: 0; */
+        /* border-radius: 10px; */
+        // background-color: red;
     }
   
 </style>
