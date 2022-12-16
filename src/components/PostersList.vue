@@ -47,44 +47,56 @@ export default {
 </script>
     
 <template>
-    <div class="movie d-flex gap-4 pb-4" @mouseover="stopAutoplay" @mouseleave="secondAutoplay">
 
-        <div @click="btnPrev" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-left"></i></div>
-
-        <div  class="movie-container flex-grow-1">
-            <h4 class=" pb-3">Movies</h4>
-            
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 pb-4 justify-content center">
-                <div class="col" v-for="singlePoster, i in store.movies" 
-                :class="{'active' : i === this.currentIndex}"
-                @click="posterClick(i)">
-                    <SinglePoster  :poster="singlePoster"></SinglePoster>
+    <template :class="store.movies.length > 0 ? 'd-block': 'd-none'">
+        <div class="movie d-flex gap-4 pb-4" @mouseover="stopAutoplay" @mouseleave="secondAutoplay">
+        
+            <div @click="btnPrev" class="flex-shrink-0 btn btn-outline-light rounded-circle">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+        
+            <div class="movie-container flex-grow-1">
+                <h4 class=" pb-3">Movies</h4>
+        
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 pb-4 justify-content center">
+                    <div class="col" v-for="singlePoster, i in store.movies" :class="{'active' : i === this.currentIndex}"
+                        @click="posterClick(i)">
+                        <SinglePoster :poster="singlePoster"></SinglePoster>
+                    </div>
                 </div>
             </div>
-        </div>
         
-        <div @click="btnNext" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-right"></i></div>
-    </div>
+            <div @click="btnNext" class="flex-shrink-0 btn btn-outline-light rounded-circle">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+    </template>
     
-    <div class="serie-tv d-flex gap-4" @mouseover="stopAutoplay" @mouseleave="secondAutoplay">
-        <div @click="btnPrev" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-left"></i></div>
-        
-        <div class="serie-container pb-4">
-            <h4 class=" py-3">Series</h4>
+    <template  :class="store.series.length > 0 ? 'd-block': 'd-none'">
+        <div class="serie-tv d-flex gap-4" @mouseover="stopAutoplay" @mouseleave="secondAutoplay">
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6  g-4 pb-4 ">
-                <div class="col" v-for="singlePoster, i in store.series"
-                :class="{'active' : i === this.currentIndex}"
-                @click="posterClick(i)">
-                    <SinglePoster :poster="singlePoster"></SinglePoster>
+            <div @click="btnPrev" class="flex-shrink-0 btn btn-outline-light rounded-circle">
+                <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        
+            <div class="serie-container pb-4">
+                <h4 class=" py-3">Series</h4>
+        
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6  g-4 pb-4 ">
+                    <div class="col" v-for="singlePoster, i in store.series" :class="{'active' : i === this.currentIndex}"
+                        @click="posterClick(i)">
+                        <SinglePoster :poster="singlePoster"></SinglePoster>
+                    </div>
                 </div>
             </div>
-
+        
+            <div @click="btnNext" class="flex-shrink-0 btn btn-outline-light rounded-circle">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        
         </div>
-            
-        <div @click="btnNext" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-right"></i></div>
-
-    </div>
+    </template>
+    
 
 </template>
 
