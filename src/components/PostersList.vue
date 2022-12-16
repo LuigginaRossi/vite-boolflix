@@ -8,6 +8,7 @@ export default {
         return{
             store,
             currentIndex : 0,
+            firstAutoplay: null,
         }
     },
     methods:{
@@ -27,20 +28,26 @@ export default {
                 this.currentIndex = 0;
             } else {
                 this.currentIndex ++;
-            }
-            // this.currentIndex ++;
+            } 
         },
+        posterClick (indexImgClicked){
+            this.currentIndex = indexImgClicked;
+        },
+        stopAutoplay (){
+            clearInterval(this.firstAutoplay);
+        },
+        secondAutoplay(){
+            this.firstAutoplay = setInterval(this.btnNext, 1500);
+        }  
+    },
+    mounted() {
+        this.firstAutoplay = setInterval(this.btnNext, 1500);   
     }
-    // created(){
-    //     fetchPosters();    
-    // },
 }
 </script>
     
 <template>
-    <!-- {{store.series[0]}} -->
-    <!-- {{store.movies[0]}} -->
-    <div class="movie d-flex gap-3">
+    <div class="movie d-flex gap-3" @mouseover="stopAutoplay" @mouseleave="secondAutoplay">
 
         <div @click="btnPrev" class="flex-shrink-0 btn btn-outline-light rounded-circle"><i class="fa-solid fa-chevron-left"></i></div>
 
@@ -48,7 +55,9 @@ export default {
             <h4 class=" pb-3">Movies</h4>
             
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 pb-4 justify-content center">
-                <div class="col" v-for="singlePoster in store.movies" :class="{'active' : singlePoster === this.currentIndex}">
+                <div class="col" v-for="singlePoster, i in store.movies" 
+                :class="{'active' : i === this.currentIndex}"
+                @click="posterClick(i)">
                     <SinglePoster  :poster="singlePoster"></SinglePoster>
                 </div>
             </div>
@@ -86,9 +95,10 @@ export default {
         align-items: center;
         justify-content: center;
     }
-
     .active{
-        opacity: 0;
+        border: 3.5px solid red;
+        padding: 0;
+        border-radius: 10px;
     }
   
 </style>

@@ -105,6 +105,7 @@ export default {
     </div>
 
 </template>
+
 <style scoped>
     .card{
         height:100%;
