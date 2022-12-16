@@ -88,33 +88,37 @@ export default {
 
 </template>
 
-<style scoped lang="scss">
+<style scoped>
+/* perchè usando il scss language non mi funzionava l'active? Domanda per tutor :D */
     .row{
         overflow: auto;
         flex-wrap: nowrap;
     }
 
-    .movie-container,.serie-containe{
-        height: 43vh;
-        .row{
-            height: 100%;
-            .col{
-            border-bottom: 3.5px solid rgba(255, 0, 0, 0); 
-            border-top: 3.5px solid rgba(255, 0, 0, 0); 
-
-            border-radius: 10px;
-
-                &:hover{
-                z-index: 4;
-                transform:  scale(1.1);
-                border-top: 0;
-                border-bottom: 0;
-                }
-            }
-        }
+    .movie-container,.serie-container{
+        height: 40vh;
+        
     }
 
-    
+    .row{
+            height: 100%;
+           
+    }
+
+    .col{
+        border-bottom: 3.5px solid rgba(94, 255, 0, 0); 
+        border-top: 3.5px solid rgba(0, 255, 8, 0); 
+        border-radius: 10px;
+
+            
+    }
+
+    .col:hover{
+            z-index: 4;
+            transform:  scale(1.1);
+            border-top: 0;
+            border-bottom: 0;
+            }
     .btn{
         width: 10px;
         aspect-ratio: 1/1;
