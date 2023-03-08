@@ -79,7 +79,7 @@ export default {
                 <i class="fa-solid fa-chevron-left"></i>
         </div>
         
-            <div class="serie-container pb-4">
+            <div class="serie-container flex-grow-1 pb-4">
                 <h4 class=" py-3">Series</h4>
         
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6  g-4 pb-4 ">
@@ -111,7 +111,7 @@ export default {
         height: 40vh;
         align-items: center;
         justify-content: center;     
-        overflow: auto; 
+        /* overflow: auto;  */
     }
 
     .row{

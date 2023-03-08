@@ -2,7 +2,7 @@
 import PostersList from './PostersList.vue';
 
 export default {
-    components: { PostersList }
+    components: { PostersList },
 }
 </script>
 

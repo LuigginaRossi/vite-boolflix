@@ -18,9 +18,9 @@ export default {
         //     this.store.includeAdult = false;
         //     if(this.store.includeAdult === false){
         //         alert("Alcuni contenuti sono adatti solo ai maggiorenni. confermi di avere più di 18 anni?");
-        //         return this.store.includeAdult = true;
+        //         this.store.includeAdult = true;
         //     }else{
-        //         return this.store.includeAdult = false;
+        //         this.store.includeAdult = false;
         //     }
         //     fetchPosters()
         // },      
