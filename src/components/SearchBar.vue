@@ -30,7 +30,7 @@ export default {
 
 <template>
     <div class="d-flex justify-content-between align-content-center">
-        <h1 class="text-secondary py-3">Boolflix</h1>
+        <h1 class="text-danger py-3" style="font-size: 3.5rem;">Boolflix</h1>
 
 
         <!-- <div class="input-group px-4">
@@ -43,10 +43,10 @@ export default {
 
         <form @submit.prevent="onSearchClick" class="align-self-center d-flex">
 
-            <div class="input-group">
-                <input type="text" class="form-control bg-none text-secondary" placeholder="Search Title" aria-label="Example text with button addon"
+            <div class="input-group ">
+                <input type="text" class="form-control bg-none border-danger text-secondary" placeholder="Search Title" aria-label="Example text with button addon"
                     aria-describedby="button-addon1" v-model="filters.titlePoster">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn btn-outline-danger" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </form>
     </div>
